@@ -1,0 +1,89 @@
+/* ===== Estilos generales ===== */
+/* Quita márgenes por defecto y facilita el cálculo de tamaños */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Variables de color para reutilizarlas en todo el diseño */
+:root {
+    --fondo: #f5f3ff;
+    --tarjeta: #ffffff;
+    --principal: #7c3aed;
+    --bien: #16a34a;
+    --texto: #1f2937;
+}
+/* Fondo y tipografía de toda la página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    padding: 24px 16px;
+}
+/* ===== Contenedor y encabezado ===== */
+/* Caja central que agrupa todo el contenido */
+.contenedor { max-width: 520px; margin: 0 auto; }
+/* Encabezado centrado */
+.encabezado { text-align: center; margin-bottom: 20px; }
+.encabezado h1 { color: var(--principal); margin-bottom: 6px; }
+.encabezado p { color: #6b7280; }
+/* ===== Resumen y progreso ===== */
+/* Fila con las tres tarjetas del resumen */
+.resumen { display: flex; gap: 12px; margin-bottom: 16px; }
+/* Cada tarjeta del resumen */
+.dato { flex: 1; padding: 12px; text-align: center; background: var(--tarjeta); border-radius: 10px; }
+.dato span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--principal); }
+.dato small { color: #6b7280; }
+/* Barra de progreso: fondo gris y relleno verde que crece */
+.progreso { height: 14px; background: #ddd6fe; border-radius: 7px; overflow: hidden; }
+.relleno { width: 0; height: 100%; background: var(--bien); transition: width 0.4s; }
+/* Texto del porcentaje */
+.porcentaje { margin: 6px 0 16px; text-align: center; font-size: 0.9rem; color: #6b7280; }
+/* ===== Formulario y filtros ===== */
+/* Fila con la casilla de texto y el botón agregar */
+.nuevo { display: flex; gap: 8px; margin-bottom: 14px; }
+/* Casilla donde se escribe el nuevo elemento */
+.nuevo input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+/* Resalta la casilla cuando se está escribiendo en ella */
+.nuevo input:focus { outline: none; border-color: var(--principal); }
+/* Fila de botones de filtro */
+.filtros { display: flex; gap: 8px; justify-content: center; margin-bottom: 14px; }
+/* Botón de filtro */
+.filtro { padding: 6px 14px; border: 2px solid var(--principal); border-radius: 20px; background: #fff; cursor: pointer; }
+/* Filtro seleccionado (clase que añade el JS) */
+.filtro.activo { background: var(--principal); color: #fff; }
+/* ===== Lista ===== */
+/* Lista sin viñetas */
+.lista { list-style: none; margin-bottom: 16px; }
+/* Cada elemento de la lista */
+.lista li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: var(--tarjeta);
+    border-radius: 8px;
+}
+/* Texto del elemento: ocupa el espacio sobrante */
+.lista span { flex: 1; }
+/* Elemento revisado: texto tachado y en gris (clase que añade el JS) */
+.lista li.revisado span { text-decoration: line-through; color: #9ca3af; }
+/* Casilla de revisado más grande */
+.lista input { width: 20px; height: 20px; cursor: pointer; }
+/* Botón de eliminar un elemento */
+.lista button { border: none; background: none; font-size: 1.1rem; cursor: pointer; }
+/* ===== Botones ===== */
+/* Fila de acciones */
+.acciones { display: flex; gap: 10px; }
+/* Estilo base de los botones */
+.boton { padding: 10px 14px; border: none; border-radius: 8px; background: var(--principal); color: #fff; font-weight: bold; cursor: pointer; }
+/* Botones grises de las acciones (ocupan el mismo ancho) */
+.boton-gris { flex: 1; background: #6b7280; }
+/* ===== Ayuda ===== */
+/* Caja con las instrucciones de uso */
+.ayuda { margin-top: 20px; padding: 14px 16px; background: #ede9fe; border-radius: 10px; font-size: 0.9rem; }
+.ayuda h2 { font-size: 1rem; margin-bottom: 6px; }
+.ayuda ol { padding-left: 20px; line-height: 1.6; }

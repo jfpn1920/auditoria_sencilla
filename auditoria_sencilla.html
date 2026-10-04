@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auditoria sencilla</title>
+    <link rel="stylesheet" href="auditoria_sencilla.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="auditoria_sencilla.js" defer></script>
+</head>
+<body>
+    <!--------------------------------------->
+    <!--|estructuracion_auditoria_sencilla|-->
+    <!--------------------------------------->
+    <main class="contenedor">
+        <!-- Encabezado con título y descripción -->
+        <header class="encabezado">
+            <h1>📋 Auditoría Sencilla</h1>
+            <p>Marca cada elemento cuando ya lo hayas revisado.</p>
+        </header>
+        <!-- Resumen: total de elementos, revisados y pendientes -->
+        <section class="resumen">
+            <!-- Tarjeta del total -->
+            <div class="dato">
+                <span id="total">0</span>
+                <small>Total</small>
+            </div>
+            <!-- Tarjeta de revisados -->
+            <div class="dato">
+                <span id="revisados">0</span>
+                <small>Revisados</small>
+            </div>
+            <!-- Tarjeta de pendientes -->
+            <div class="dato">
+                <span id="pendientes">0</span>
+                <small>Pendientes</small>
+            </div>
+        </section>
+        <!-- Barra de progreso: el JS cambia el ancho del relleno -->
+        <div class="progreso">
+            <div class="relleno" id="relleno"></div>
+        </div>
+        <!-- Texto con el porcentaje de avance -->
+        <p class="porcentaje" id="porcentaje">0% completado</p>
+        <!-- Formulario para agregar un nuevo elemento a la lista -->
+        <form class="nuevo" id="formulario">
+            <input type="text" id="texto" maxlength="60" placeholder="Nuevo elemento a revisar...">
+            <button type="submit" class="boton">Agregar</button>
+        </form>
+        <!-- Botones para filtrar la lista (data-filtro guarda el valor) -->
+        <nav class="filtros" id="filtros">
+            <button class="filtro" data-filtro="todos">Todos</button>
+            <button class="filtro" data-filtro="pendientes">Pendientes</button>
+            <button class="filtro" data-filtro="revisados">Revisados</button>
+        </nav>
+        <!-- Lista de elementos: el JS la llena con los datos guardados -->
+        <ul class="lista" id="lista"></ul>
+        <!-- Acciones sobre toda la lista -->
+        <section class="acciones">
+            <!-- Quita la marca de revisado a todos los elementos -->
+            <button id="btn-desmarcar" class="boton boton-gris">Desmarcar todos</button>
+            <!-- Elimina de la lista los elementos ya revisados -->
+            <button id="btn-quitar" class="boton boton-gris">Quitar revisados</button>
+        </section>
+        <!-- Instrucciones breves de uso -->
+        <section class="ayuda">
+            <h2>ℹ️ Cómo usarla</h2>
+            <ol>
+                <li>Marca la casilla de cada elemento que ya revisaste.</li>
+                <li>Agrega nuevos elementos con el formulario.</li>
+                <li>Usa los filtros para ver pendientes o revisados.</li>
+                <li>Elimina un elemento con el botón 🗑️.</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
